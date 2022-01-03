@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Drugs</title>
+  <link rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+  <div class="login">
+    <h1>Drugs</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <select name="Age" id="Age">
+        <option value="">How old are you ?</option>
+        <option value="0">18-24 years</option>
+        <option value="1">25-34 years</option>
+        <option value="2">35-44 years</option>
+        <option value="3">45-54 years</option>
+        <option value="4">55-64 years</option>
+        <option value="5">65+ years</option>
+      </select>
+
+      <select name="Gender" id="Gender">
+        <option value="">Gender</option>
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+      </select>
+
+      <select name="Education" id="Education">
+        <option value="">Please choose a level of studies</option>
+        <option value="0">Left school before 16 years</option>
+        <option value="1">Left school at 16 years</option>
+        <option value="2">Left school at 17 years</option>
+        <option value="3">Left school at 18 years</option>
+        <option value="4">Some college or university, no certificate or degree</option>
+        <option value="5">Professional certificate/ diploma</option>
+        <option value="6">University degree</option>
+        <option value="7">Masters degree</option>
+        <option value="8">Doctorate degree</option>
+      </select>
+
+      <input type="text" name="Nscore" placeholder="Nscore" required="required" />
+      <input type="text" name="Escore" placeholder="Escore" required="required" />
+      <input type="text" name="Oscore" placeholder="Oscore" required="required" />
+      <input type="text" name="Ascore" placeholder="Ascore" required="required" />
+      <input type="text" name="Cscore" placeholder="Cscore" required="required" />
+      <input type="text" name="Impulsive" placeholder="Impulsive" required="required" />
+      <input type="text" name="SS" placeholder="SS" required="required" />
+
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict if you take drugs</button>
+    </form>
+
+    <br>
+    <br>
+
+
+  </div>
+
+
+</body>
+
+</html>

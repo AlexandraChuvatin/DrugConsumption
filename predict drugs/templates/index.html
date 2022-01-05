@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Take Drugs ?</title>
+  
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+    <h1>Drugs</h1>
+<div class="container">
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    
+        <p>
+        How old are you ?? <br /><br/>
+        18-24 years ? :
+        <input type="radio" name="age0" value="0"/ checked> <label>Non</label>
+        <input type="radio"  name="age0" value="1"/> <label>Oui</label>
+        
+        <br />25-34 years ? :
+        <input type="radio" name="age1" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="age1" value="1"/> <label>Oui</label>
+        
+        <br />35-44 years
+        <input type="radio" name="age2" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="age2" value="1"/> <label>Oui</label>
+        
+        <br />45-54 years
+        <input type="radio" name="age3" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="age3" value="1"/> <label>Oui</label>
+        
+        <br />55-64 years
+        <input type="radio" name="age4" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="age4" value="1"/> <label>Oui</label>
+        
+        <br />65+ years
+        <input type="radio" name="age5" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="age5" value="1"/> <label>Oui</label>
+        
+        <br/><br/>  Are you ? :<br/>
+
+        <br />Male
+        <input type="radio" name="homme" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="homme" value="1"/> <label>Oui</label>
+      
+
+        <br />Female
+        <input type="radio" name="femme" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="femme" value="1"/> <label>Oui</label>
+        
+        <br/><br/>
+        Please choose a level of studies : <br/>
+        
+        <br />Left school before 16 years 
+        <input type="radio" name="studies0" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies0" value="1"/> <label>Oui</label>
+        
+        <br />Left school at 16 years
+        <input type="radio" name="studies1" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies1" value="1"/> <label>Oui</label>
+
+        <br />Left school at 17 years
+        <input type="radio" name="studies2" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies2" value="1"/> <label>Oui</label>
+
+        <br />Left school at 18 years
+        <input type="radio" name="studies3" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies3" value="1"/> <label>Oui</label>
+        
+        <br />Some college or university, no certificate or degree
+        <input type="radio" name="studies4" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies4" value="1"/> <label>Oui</label>
+        
+        <br />Professional certificate/ diploma
+        <input type="radio" name="studies5" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies5" value="1"/> <label>Oui</label>
+
+        <br />University degree
+        <input type="radio" name="studies6" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies6" value="1"/> <label>Oui</label>
+        
+        <br />Masters degree
+        <input type="radio" name="studies7" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies7" value="1"/> <label>Oui</label>        
+
+        <br />Doctorate degree
+        <input type="radio" name="studies8" value="0"/ checked> <label>Non</label>
+        <input type="radio" name="studies8" value="1"/> <label>Oui</label>        
+        
+        </p>
+</div>
+      <input type="text" name="Nscore" placeholder="Nscore" required="required" />
+      <input type="text" name="Escore" placeholder="Escore" required="required" />
+      <input type="text" name="Oscore" placeholder="Oscore" required="required" />
+      <input type="text" name="Ascore" placeholder="Ascore" required="required" />
+      <input type="text" name="Cscore" placeholder="Cscore" required="required" />
+      <input type="text" name="Impulsive" placeholder="Impulsive" required="required" />
+      <input type="text" name="SS" placeholder="SS" required="required" />
+
+
+      <button type="submit" class="btn btn-3d btn-3dc">Predict if you take drugs</button>
+
+    </form>
+
+   <br>
+   <br>
+   
+  <p class="prediction"> {{ prediction_text }} </p>
+
+ </div>
+
+
+</body>
+</html>
